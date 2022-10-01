@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<VBox alignment="CENTER" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@Style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.tpfinal3.AppController">
+   <children>
+      <BorderPane prefHeight="283.0" prefWidth="1420.0">
+         <center>
+            <Label fx:id="titleLbl" text="Gestion+" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="1420.0" BorderPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <HBox prefHeight="64.0" prefWidth="711.0" spacing="15.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <Button fx:id="insertBtn" mnemonicParsing="false" onAction="#addEmploye" prefHeight="43.0" prefWidth="47.0" HBox.hgrow="SOMETIMES">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Icons/insert2.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Insérer" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="updateBtn" mnemonicParsing="false" onAction="#updateEmploye" prefHeight="38.0" prefWidth="38.0" HBox.hgrow="SOMETIMES">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Icons/edit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Éditer" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteEmploye" prefHeight="63.0" prefWidth="43.0" HBox.hgrow="SOMETIMES">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Icons/delete.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Supprimer" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="712.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <TextField fx:id="searchField" alignment="CENTER" maxWidth="400.0" prefHeight="35.0" prefWidth="400.0" promptText="Search" HBox.hgrow="SOMETIMES">
+                           <HBox.margin>
+                              <Insets left="300.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </bottom>
+         <VBox.margin>
+            <Insets left="250.0" right="250.0" />
+         </VBox.margin>
+         <right>
+            <VBox fx:id="disconnectContainer" alignment="CENTER_RIGHT" fillWidth="false" prefHeight="133.0" prefWidth="91.0" BorderPane.alignment="CENTER_RIGHT">
+               <children>
+                  <Button fx:id="disconnectBtn" mnemonicParsing="false" onAction="#disconnectToLogin" prefWidth="0.0" scaleX="0.5" scaleY="0.5" textAlignment="CENTER" VBox.vgrow="NEVER">
+                     <tooltip>
+                        <Tooltip text="Déconnexion" />
+                     </tooltip>
+                     <graphic>
+                        <SVGPath fx:id="disconnectSvg" content="M79.128,64.598H40.069c-1.726,0-3.125-1.414-3.125-3.157c0-1.744,1.399-3.158,3.125-3.158h39.057L66.422,43.733 c-1.14-1.301-1.019-3.289,0.269-4.439c1.288-1.151,3.257-1.03,4.396,0.271l17.281,19.792c1.061,1.211,1.029,3.019-0.02,4.19 l-17.262,19.77c-1.14,1.302-3.108,1.423-4.396,0.271c-1.287-1.151-1.408-3.139-0.269-4.44L79.128,64.598L79.128,64.598z M42.396,116.674c1.689,0.409,2.727,2.11,2.318,3.799c-0.409,1.689-2.109,2.728-3.799,2.318c-3.801-0.922-7.582-1.671-11.052-2.358 C10.426,116.583,0,114.519,0,86.871V34.188C0,7.96,11.08,5.889,29.431,2.46c3.572-0.667,7.448-1.391,11.484-2.371 c1.689-0.409,3.39,0.629,3.799,2.319c0.408,1.689-0.629,3.39-2.318,3.799c-4.291,1.041-8.201,1.771-11.805,2.445 C15.454,11.48,6.315,13.188,6.315,34.188v52.683c0,22.467,8.643,24.179,24.756,27.37C34.453,114.911,38.138,115.642,42.396,116.674 L42.396,116.674z" fill="WHITE" scaleX="0.5" scaleY="0.5" />
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
+      <BorderPane prefHeight="838.0" prefWidth="1748.0">
+         <center>
+            <TableView fx:id="colPage" onMouseClicked="#setEmployeDataToFields" prefHeight="838.0" prefWidth="1420.0" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="idCol" prefWidth="48.0" text="▼▲" />
+                  <TableColumn fx:id="nomCol" prefWidth="325.0" text="▼▲" />
+                  <TableColumn fx:id="prenomCol" prefWidth="325.0" text="▼▲" />
+                  <TableColumn fx:id="genreCol" prefWidth="178.0" text="▼▲" />
+                  <TableColumn fx:id="experienceCol" minWidth="0.0" prefWidth="219.0" text="▼▲" />
+                  <TableColumn fx:id="salaireCol" prefWidth="275.0" text="▼▲" />
+                  <TableColumn fx:id="emptyCol" prefWidth="33.0" />
+               </columns>
+               <BorderPane.margin>
+                  <Insets top="1.0" />
+               </BorderPane.margin>
+            </TableView>
+         </center>
+         <VBox.margin>
+            <Insets bottom="150.0" left="250.0" right="250.0" top="50.0" />
+         </VBox.margin>
+         <top>
+            <HBox fx:id="inputsLine" alignment="CENTER" prefHeight="33.0" prefWidth="1420.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="idField" alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="56.0" promptText="Id" HBox.hgrow="SOMETIMES">
+                     <tooltip>
+                        <Tooltip text="Entrer un nombre entier" />
+                     </tooltip>
+                  </TextField>
+                  <TextField fx:id="nomField" alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="330.0" promptText="Nom" HBox.hgrow="SOMETIMES">
+                     <tooltip>
+                        <Tooltip text="Entrer un Nom" />
+                     </tooltip>
+                  </TextField>
+                  <TextField fx:id="prenomField" alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="330.0" promptText="Prenom" HBox.hgrow="SOMETIMES">
+                     <tooltip>
+                        <Tooltip text="Entrer un prénom" />
+                     </tooltip>
+                  </TextField>
+                  <ComboBox fx:id="comboBoxGender" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="183.0" promptText="Genre" HBox.hgrow="SOMETIMES">
+                     <tooltip>
+                        <Tooltip text="Sélectionner un genre" />
+                     </tooltip>
+                  </ComboBox>
+                  <ComboBox fx:id="comboBoxExperience" maxWidth="1.7976931348623157E308" prefHeight="36.0" prefWidth="224.0" promptText="Experience" HBox.hgrow="SOMETIMES">
+                     <tooltip>
+                        <Tooltip text="Sélectionner l'expérience" />
+                     </tooltip>
+                  </ComboBox>
+                  <TextField fx:id="salaireField" alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="280.0" promptText="Salaire" HBox.hgrow="SOMETIMES">
+                     <tooltip>
+                        <Tooltip text="Écrivez un nombre" />
+                     </tooltip>
+                  </TextField>
+                  <Button fx:id="clearBtn" mnemonicParsing="false" onAction="#clearFields" prefHeight="46.0" prefWidth="52.0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Icons/refresh.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Vider les champs" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</VBox>
